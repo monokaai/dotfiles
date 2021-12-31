@@ -1,3 +1,22 @@
+# alias
+# shell
+alias la='ls -a'
+alias ll='ls -la'
+
+# git
+alias gb='git branch'
+alias gs='git status'
+alias ga='git add'
+alias gcb='git checkout -b'
+alias gcm='git commit -m'
+alias gp='git push'
+alias gpom='git pull origin master'
+# zsh
+alias sz='source ~/.zshrc'
+alias vz='vi ~/.zshrc'
+
+
+# uname
 if (( $+commands[arch] )); then
   alias a64="exec arch -arch arm64e '$SHELL'"
   alias x64="exec arch -arch x86_64 '$SHELL'"
@@ -21,13 +40,12 @@ else
   path=($BREW_PATH_LOCAL(N-/) $path)
 fi
 
-
 # history
 HISTFILE=$HOME/.zsh-history # 履歴を保存するファイル
 HISTSIZE=100000             # メモリ上に保存する履歴のサイズ
 SAVEHIST=1000000            # 上述のファイルに保存する履歴のサイズ
 
-# share .zshhistory
+# .zshhistory
 setopt inc_append_history   # 実行時に履歴をファイルに追加していく
 setopt share_history        # 履歴を他のシェルとリアルタイム共有する
 
