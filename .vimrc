@@ -1,11 +1,23 @@
-scriptencoding utf-8 "マルチバイト文字を使えるようにする
-set encoding=utf-8 "文字読込をutf-8で行う
+scriptencoding utf-8
+set encoding=utf-8
 
-set number "行数を表示
-set incsearch "インクリメンタルサーチの有効化
-set wildmenu wildmode=list:full "コマンドモードの補完機能
-set laststatus=2 "ファイル名を最後の行に常時表示
+let mapleader = "\<Space>"
+"vim-fugitive
+nnoremap <leader>ga :Git add %:p<CR><CR>
+nnoremap <leader>gc :Gcommit<CR><CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gp :Gpush<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gl :Glog<CR>
+nnoremap <leader>gb :Gblame<CR>
+
+set number
+set expandtab
+set incsearch
+set wildmenu wildmode=list:full
 set statusline=%F%r%h%=
+set ignorecase
+set smartcase
 
 colorscheme default
 syntax enable
@@ -30,6 +42,15 @@ call plug#begin()
 Plug 'Yggdroot/indentLine'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'reireias/vim-cheatsheet'
+Plug 'vim-airline/vim-airline'
+Plug 'Townk/vim-autoclose'
+Plug 'scrooloose/syntastic'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+"jPlug ''
+"jPlug ''
+"jPlug ''
+"jPlug ''
 call plug#end()
 
 " Path to my vim cheatsheet
