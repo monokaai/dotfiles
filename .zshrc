@@ -78,70 +78,17 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light paulirish/git-open # Open related repo by 'git open'
 zinit light supercrabtree/k
 zinit light mollifier/anyframe
-zinit light mollifier/anyframe
 ### End of Zinit's setting chunk
-
-# use peco
-peco-select-history() {
-    BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
-    CURSOR=${#BUFFER}
-    zle reset-prompt
-}
-zle -N peco-select-history
-bindkey '^r' peco-select-history
-
-# cdr
-if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
-    autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-    add-zsh-hook chpwd chpwd_recent_dirs
-    zstyle ':completion:*' recent-dirs-insert both
-    zstyle ':chpwd:*' recent-dirs-default true
-    zstyle ':chpwd:*' recent-dirs-max 1000
-    zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/chpwd-recent-dirs"
-fi
-
-# peco-cdr
-function peco-cdr () {
-    local selected_dir="$(cdr -l | sed 's/^[0-9]\+ \+//' | peco --prompt="cdr >" --query "$LBUFFER")"
-    if [ -n "$selected_dir" ]; then
-        BUFFER="cd ${selected_dir}"
-        zle accept-line
-    fi
-}
-zle -N peco-cdr
-bindkey '^E' peco-cdr
-
-# peco-ghq
-function peco-ghq-look () {
-    local ghq_roots="$(git config --path --get-all ghq.root)"
-    local selected_dir=$(ghq list --full-path | \
-        xargs -I{} ls -dl --time-style=+%s {}/.git | sed 's/.*\([0-9]\{10\}\)/\1/' | sort -nr | \
-        sed "s,.*\(${ghq_roots/$'\n'/\|}\)/,," | \
-        sed 's/\/.git//' | \
-        peco --prompt="cd-ghq >" --query "$LBUFFER")
-    if [ -n "$selected_dir" ]; then
-        BUFFER="cd $(ghq list --full-path | grep --color=never -E "/$selected_dir$")"
-        zle accept-line
-    fi
-}
-
-zle -N peco-ghq-look
-bindkey '^G' peco-ghq-look
-
-# Ctrl+x -> b
 # peco でディレクトリの移動履歴を表示
-bindkey '^d' anyframe-widget-cdr
+bindkey '^j' anyframe-widget-cdr
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 
-# Ctrl+x -> r
 # peco でコマンドの実行履歴を表示
 bindkey '^r' anyframe-widget-execute-history
 
-# Ctrl+x -> Ctrl+b
 # peco でGitブランチを表示して切替え
 bindkey '^b' anyframe-widget-checkout-git-branch
 
-# Ctrl+x -> g
 # GHQでクローンしたGitリポジトリを表示
-bindkey '^g'
+bindkey '^g' anyframe-widget-cd-ghq-repository
