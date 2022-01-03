@@ -4,6 +4,28 @@ set encoding=utf-8
 source ~/.vim/syntax/fstrings.vim
 
 let mapleader = "\<Space>"
+"generals
+inoremap <silent> <Leader>jj <Esc>
+nnoremap <silent> <Leader>wq :wq<CR>
+nnoremap <silent> <Leader>q :q<CR>
+noremap <silent> <Leader>a myggVG$
+inoremap <silent> <Leader>a <Esc>myggVG$
+nnoremap <silent> <Leader>vr :new ~/.vimrc<CR>
+nnoremap <silent> <Leader>r :source ~/.vimrc<CR>
+noremap <silent> <Leader><Leader> <C-w>w
+map <silent> <leader>n :call RenameFile()<CR>
+map <silent> <leader>? :Cheat<CR>
+
+function! RenameCurrentFile()
+  let old = expand('%')
+  let new = input('新規ファイル名: ', old , 'file')
+  if new != '' && new != old
+    exec ':saveas ' . new
+    exec ':silent !rm ' . old
+    redraw!
+  endif
+endfunction
+
 "vim-fugitive
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gc :Gcommit<CR><CR>
@@ -13,11 +35,23 @@ nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>gb :Gblame<CR>
 
+
+
+"jp -> en in normal mode
+nnoremap あ a
+nnoremap い i
+nnoremap う u
+nnoremap お o
+nnoremap ｄｄ dd
+nnoremap ｙｙ yy
+
 set colorcolumn=80
 highlight ColorColumn guibg=#202020 ctermbg=lightgray
 set autoindent
+set ambiwidth=double
 set background=dark
 set expandtab
+set history=5000
 set hlsearch
 set ignorecase
 set incsearch
@@ -26,6 +60,7 @@ set number
 set smartcase
 set statusline=%F%r%h%=d
 set belloff=all
+set whichwrap=b,s,h,l,<,>,[,],~
 set wildmenu wildmode=list:full
 
 " 検索後にジャンプした際に検索単語を画面中央に持ってくる
@@ -36,17 +71,18 @@ nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 
+
 nnoremap j gj
 nnoremap k gk
 
-" [ と打ったら [] って入力されてしかも括弧の中にいる(以下同様)
+" complementation
 inoremap [ []<left>
 inoremap ( ()<left>
 inoremap { {}<left>
 inoremap " ""<left>
 inoremap ' ''<left>
 
-" Ctrl + hjkl でウィンドウ間を移動
+" move window
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -113,18 +149,26 @@ endif
 " use vim-plug
 call plug#begin()
 "Plug 'tpope/vim-sensible'
-Plug 'Yggdroot/indentLine'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'reireias/vim-cheatsheet'
-Plug 'vim-airline/vim-airline'
-Plug 'Townk/vim-autoclose'
-Plug 'scrooloose/syntastic'
 Plug 'airblade/vim-gitgutter'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-peekaboo'
+Plug 'reireias/vim-cheatsheet'
+Plug 'scrooloose/syntastic'
+Plug 'simeji/winresizer'
+Plug 'thinca/vim-quickrun'
+Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-fugitive'
-"Plug ''
-"Plug ''
-"Plug ''
+Plug 'vim-airline/vim-airline'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 let g:cheatsheet#cheat_file = '~/.cheatsheet.md'
 let g:indentLine_setColors = 0
+let g:syntastic_enable_signs = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_python_checkers = ['flake8']

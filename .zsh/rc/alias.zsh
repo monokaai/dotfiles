@@ -20,6 +20,7 @@ alias gs='git status'
 alias ga='git add'
 alias gl='git log'
 alias gd='git diff'
+alias gco='git checkout'
 alias gcm='git commit -m'
 alias gcb='git checkout -b'
 alias gb='git branch'
@@ -33,8 +34,11 @@ alias vv='source ~/.vimrc'
 alias sz='source ~/.zshrc'
 alias vz='vi ~/.zshrc'
 
+# docker
+alias dc='docker-compose'
 
-# uname
+
+# uname for Apple/Intel Mac
 if (( $+commands[arch] )); then
   alias a64="exec arch -arch arm64e '$SHELL'"
   alias x64="exec arch -arch x86_64 '$SHELL'"

@@ -12,6 +12,8 @@ which brew >/dev/null 2>&1 && brew update
 echo "ok. run brew upgrade..."
 brew upgrade
 
+#  commands
+# TODO remove unnecessary ones
 formulas=(
     asciinema
     anyenv
@@ -25,7 +27,7 @@ formulas=(
     gh
     git
     gitui
-    jrnl
+    d jrnl
     mas
     mysql
     navi
@@ -61,51 +63,35 @@ for formula in "${formulas[@]}"; do
     brew install $formula || brew upgrade $formula
 done
 
-# install gui up
+# gui apps
 casks=(
     alfred
-    alacritty
     appcleaner
     biscuit
     bitwarden
-    boostnote
-    cacher
     cheatsheet
+    chromedriver
     dash
-    deepl
     discord
     docker
     drawio
-    dropbox
     font-hack-nerd-font
-    gitkraken
     grammarly
     google-backup-and-sync
-    gyazo
     hyperswitch
-    inkscape
     iterm2
-    julia
-    jetbrains-toolbox
+    itsycal
     kap
     karabiner-elements
     keycastr
-    mamp
-    notion
-    obs
+    # TODO remove unnecessary ones
     papers
-    r
-    rectangle
     skitch
-    skype
     slack
     spotify
-    steam
     tickeys
-    tldr
-    visual-studio
+    tweeten
     visual-studio-code
-    vrew
     vlc
     xmind
     zoom
@@ -117,16 +103,18 @@ for cask in "${casks[@]}"; do
 done
 
 stores=(
-    497799835
-    539883307
-    937984704
-    975890633
-    1144071713
-    1295203466
-    1423210932
-    1429033973
-    1450950860
-    1483764819
+    494168017  # Authy
+    417375580  # Better Snap Tool
+    1423210932 # Flow - Focus & Pomodoro Timer
+    1444383602 # Goodnotes5
+    975890633  # HotKey App
+    539883307  # Line
+    568494494  # Pocket
+    747648890  # Telegram
+    1398373917 # Upnote
+    497799835  # Xcode
+    457622435  # Yoink
+    405399194  # Kindle
 )
 
 echo "app stores"

@@ -1,3 +1,6 @@
+# hook direnv
+eval "$(direnv hook zsh)"
+
 source /Users/monokaai/dotfiles/.zsh/rc/alias.zsh
 
 # automatically change directory when dir name is typed
@@ -9,7 +12,9 @@ setopt auto_param_keys
 setopt correct
 # 上書きリダイレクトの禁止
 setopt no_clobber
+
 export LSCOLORS=Exfxcxdxbxegedabagacad
+export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
 # history
 HISTFILE=$HOME/.zsh-history # 履歴を保存するファイル
@@ -82,3 +87,19 @@ bindkey '^b' anyframe-widget-checkout-git-branch
 
 # GHQでクローンしたGitリポジトリを表示
 bindkey '^g' anyframe-widget-cd-ghq-repository
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/monokaai/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/monokaai/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/Users/monokaai/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/monokaai/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
