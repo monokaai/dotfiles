@@ -1,7 +1,7 @@
 # hook direnv
 eval "$(direnv hook zsh)"
 
-source /Users/monokaai/dotfiles/.zsh/rc/alias.zsh
+source /Users/kosukesuzuki/work/dotfiles/.zsh/rc/alias.zsh
 
 # automatically change directory when dir name is typed
 setopt auto_cd
@@ -90,14 +90,14 @@ bindkey '^g' anyframe-widget-cd-ghq-repository
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/monokaai/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/kosukesuzuki/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/monokaai/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/Users/monokaai/miniforge3/etc/profile.d/conda.sh"
+    if [ -f "/Users/kosukesuzuki/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/Users/kosukesuzuki/miniforge3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/monokaai/miniforge3/bin:$PATH"
+        export PATH="/Users/kosukesuzuki/miniforge3/bin:$PATH"
     fi
 fi
 unset __conda_setup

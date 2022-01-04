@@ -23,10 +23,7 @@ formulas=(
     exa
     ffmpeg
     fd
-    fish
     gh
-    git
-    gitui
     d jrnl
     mas
     mysql
@@ -67,16 +64,10 @@ done
 casks=(
     alfred
     appcleaner
-    biscuit
     bitwarden
     cheatsheet
-    chromedriver
-    dash
-    discord
     docker
     drawio
-    font-hack-nerd-font
-    grammarly
     google-backup-and-sync
     hyperswitch
     iterm2
@@ -84,15 +75,9 @@ casks=(
     kap
     karabiner-elements
     keycastr
-    # TODO remove unnecessary ones
-    papers
     skitch
     slack
-    spotify
-    tickeys
-    tweeten
     visual-studio-code
-    vlc
     xmind
     zoom
 )
@@ -103,18 +88,11 @@ for cask in "${casks[@]}"; do
 done
 
 stores=(
-    494168017  # Authy
     417375580  # Better Snap Tool
-    1423210932 # Flow - Focus & Pomodoro Timer
-    1444383602 # Goodnotes5
     975890633  # HotKey App
-    539883307  # Line
     568494494  # Pocket
-    747648890  # Telegram
     1398373917 # Upnote
     497799835  # Xcode
-    457622435  # Yoink
-    405399194  # Kindle
 )
 
 echo "app stores"
