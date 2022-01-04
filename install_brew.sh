@@ -20,19 +20,17 @@ formulas=(
     bat
     ctop
     dat
+    direnv
     exa
     ffmpeg
     fd
-    fish
     gh
     git
-    gitui
     d jrnl
     mas
     mysql
     navi
     nb
-    neovim
     neofetch
     nodebrew
     nnn
@@ -51,6 +49,7 @@ formulas=(
     tmuxinator
     tree
     warp
+    wget
     yarn
 )
 
