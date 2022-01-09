@@ -1,0 +1,12 @@
+[user]
+	name = monokaai
+	email = monokaai5@gmail.com
+[alias]
+    st = status
+    co = checkout
+[diff "wordx"]
+  textconv = docx2txt
+[diff "powerpointx"]
+  textconv = pptx2txt
+[diff "excelx"]
+  textconv = git-xlsx-textconv
