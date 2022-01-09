@@ -13,8 +13,10 @@ setopt correct
 # 上書きリダイレクトの禁止
 setopt no_clobber
 
+# environments
 export LSCOLORS=Exfxcxdxbxegedabagacad
 export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+export PERL5LIB=$HOME/perl5/lib/perl5/
 
 # history
 HISTFILE=$HOME/.zsh-history # 履歴を保存するファイル

@@ -14,13 +14,16 @@ brew upgrade
 
 #  commands
 # TODO remove unnecessary ones
+# https://takemikami.com/2019/03/27/git-diffdocx-pptx.html git diffでdocx, pptx, xlsxのテキスト差分を確認できるようにする
 formulas=(
     asciinema
     anyenv
     bat
+    cpanm
     ctop
     dat
     direnv
+    docx2txt
     exa
     ffmpeg
     fd
