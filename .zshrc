@@ -105,3 +105,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+#  https://qiita.com/kazushi47/items/d04715be05dc7c5287e3#anyenv%E3%81%AE%E5%B0%8E%E5%85%A5
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
