@@ -144,28 +144,23 @@
                         ]
                     },
                     {
+                        "description": "Personal settings for Moonlander (shorturl.at/hqJR9)",
                         "conditions": [
                             {
                                 "identifiers": [
                                     {
-                                        "product_id": 6505,
-                                        "vendor_id": 12951
+                                        "vendor_id": 12951,
+                                        "product_id": 6505
                                     }
                                 ],
                                 "type": "device_if"
                             }
                         ],
-                        "description": "Personal settings for Moonlander (shorturl.at/hqJR9)",
                         "manipulators": [
                             {
                                 "description": "semicolon -> colon",
                                 "from": {
                                     "key_code": "semicolon",
-                                    "modifiers": {
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
                                 },
                                 "to": [
                                     {
@@ -505,8 +500,8 @@
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
-                        "product_id": 6505,
-                        "vendor_id": 12951
+                        "vendor_id": 12951,
+                        "product_id": 6505
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
@@ -518,8 +513,8 @@
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": true,
-                        "product_id": 45081,
-                        "vendor_id": 1133
+                        "vendor_id": 1133,
+                        "product_id": 45081
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
@@ -531,8 +526,8 @@
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
-                        "product_id": 834,
-                        "vendor_id": 1452
+                        "vendor_id": 1452,
+                        "product_id": 834
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": true,
