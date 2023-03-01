@@ -346,13 +346,13 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "hat -> plus",
+                                "description": "hat -> equal",
                                 "from": {
                                     "key_code": "equal_sign"
                                 },
                                 "to": [
                                     {
-                                        "key_code": "semicolon",
+                                        "key_code": "hyphen",
                                         "modifiers": [
                                             "shift"
                                         ]
@@ -361,7 +361,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "tilde -> equal",
+                                "description": "tilde -> plus",
                                 "from": {
                                     "key_code": "equal_sign",
                                     "modifiers": {
@@ -372,7 +372,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "hyphen",
+                                        "key_code": "semicolon",
                                         "modifiers": [
                                             "shift"
                                         ]
