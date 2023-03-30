@@ -9,7 +9,7 @@ which brew >/dev/null 2>&1 && brew doctor
 echo "run brew update..."
 which brew >/dev/null 2>&1 && brew update
 
-echo "ok. run brew upgrade..."
+echo "ok. running brew upgrade..."
 brew upgrade
 
 #  commands
@@ -66,19 +66,16 @@ done
 # gui apps
 casks=(
     alfred
+    alt-tab
     appcleaner
-    biscuit
     bitwarden
     cheatsheet
     chromedriver
-    dash
     discord
     docker
     drawio
     font-hack-nerd-font
-    grammarly
     google-backup-and-sync
-    hyperswitch
     iterm2
     itsycal
     kap
@@ -88,8 +85,6 @@ casks=(
     papers
     skitch
     slack
-    spotify
-    tickeys
     tweeten
     visual-studio-code
     vlc
