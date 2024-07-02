@@ -39,6 +39,8 @@ HISTSIZE=100000             # メモリ上に保存する履歴のサイズ
 SAVEHIST=1000000            # 上述のファイルに保存する履歴のサイズ
 setopt inc_append_history
 setopt share_history
+setopt hist_ignore_dups
+setopt hist_verify
 
 # enable completion
 autoload -Uz compinit && compinit

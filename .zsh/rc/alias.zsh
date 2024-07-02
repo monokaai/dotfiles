@@ -1,10 +1,6 @@
 # shell
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
 alias la='ls -a --color=auto'
 alias ll='ls -la --color=auto'
-alias g='googler'
 alias -g C='| pbcopy'
 alias -g G='| grep --color=auto'
 alias -g L='| less --color=auto'
@@ -36,7 +32,6 @@ alias vz='vi ~/.zshrc'
 
 # docker
 alias dc='docker-compose'
-
 
 # uname for Apple/Intel Mac
 if (( $+commands[arch] )); then
