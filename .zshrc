@@ -26,12 +26,15 @@ source /Users/monokaai/dotfiles/.zsh/rc/alias.zsh
 
 # Settings
 setopt auto_cd # 自動でディレクトリ移動
+cdpath=(.. ~ ~/work) # 列挙したパス配下へディレクトリ名だけで移動
 setopt IGNOREEOF # Ctrl+Dでログアウトしてしまうことを防ぐ
 setopt complete_in_word
 setopt auto_param_keys
-setopt correct
+setopt auto_param_slash # ディレクトリ名末尾にスラッシュ付与
+setopt correct # スペルミス修正
 setopt no_beep # ビープ音の無効化
 setopt no_clobber # 上書きリダイレクトの禁止
+setopt print_eight_bit # 日本語ファイルの表示
 
 # History
 HISTFILE=$HOME/.zsh-history # 履歴を保存するファイル
@@ -82,7 +85,13 @@ zinit light-mode for \
 zinit light zsh-users/zsh-autosuggestions
 zinit light paulirish/git-open # Open related repo by 'git open'
 zinit light supercrabtree/k
-zinit light mollifier/anyframe
+zinit light mollifier/anyframej
+zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
+zinit light sharkdp/bat
+
+if builtin command -v bat > /dev/null; then
+    alias cat="bat"
+fi
 ### End of Zinit's setting chunk
 
 # Peco
