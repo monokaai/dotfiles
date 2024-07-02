@@ -32,6 +32,12 @@ alias vz='vi ~/.zshrc'
 
 # docker
 alias dc='docker-compose'
+alias dcu='docker-compose up -d'
+alias dcb='docker-compose build'
+alias dcbn='docker-compose build --no-cache'
+alias dp='docker ps'
+alias dcl='docker container ls'
+alias de='docker exec -it $(docker ps |peco|awk "{print \$1}") bash'
 
 # uname for Apple/Intel Mac
 if (( $+commands[arch] )); then
