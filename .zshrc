@@ -85,7 +85,7 @@ zinit light-mode for \
 zinit light zsh-users/zsh-autosuggestions
 zinit light paulirish/git-open # Open related repo by 'git open'
 zinit light supercrabtree/k
-zinit light mollifier/anyframej
+zinit light mollifier/anyframe
 zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
 
