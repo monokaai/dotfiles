@@ -81,14 +81,8 @@ casks=(
     kap
     karabiner-elements
     keycastr
-    # TODO remove unnecessary ones
-    papers
-    skitch
     slack
-    tweeten
     visual-studio-code
-    vlc
-    xmind
     zoom
 )
 
