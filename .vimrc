@@ -1,8 +1,6 @@
 scriptencoding utf-8
 set encoding=utf-8
 
-source ~/.vim/syntax/fstrings.vim
-
 let mapleader = "\<Space>"
 "generals
 inoremap <silent> <Leader>jj <Esc>
