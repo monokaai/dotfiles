@@ -110,4 +110,17 @@ bindkey '^g' anyframe-widget-cd-ghq-repository
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
 export PATH="/opt/homebrew/sbin:$PATH"
+# pnpm
+export PNPM_HOME="/Users/monokaai/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
 
+# bun completions
+[ -s "/Users/monokaai/.bun/_bun" ] && source "/Users/monokaai/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
